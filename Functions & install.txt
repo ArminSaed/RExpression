@@ -1,0 +1,36 @@
+
+# In order toproperly installing this package, users should start with installing following packages:
+#install.packages(devtools)
+#install.packages(roxygen2)
+#install.packages(Rcpp)
+
+# After installing those thrre package above, users should load them according to the following code:
+
+require(devtools)
+require(roxygen2)
+require(Rcpp)
+
+
+# next, run the follwing code and give the software the exact direction of the package
+#in your computer drive, and then, wait till install is ended.
+
+dr <- paste(choose.dir(), "\\RExpression_1.0.1.zip", sep="")
+install.packages(dr, repos = NULL, type = "win.binary")
+
+
+# After installing the package, users can load this package by running the following code:
+library(RExpression)
+
+# the follwing function will give the results, in this function the number are follwo:
+#trt: column number of treatment variable, trt.gn: column number of Ct of the favorit gene,
+#ref.gn: column number of the references gene; and graph.num: is the number of the graph
+# that users want to extract which the number goes from 1 to 11. Each graph is different from others.
+rexp(trt=1, trt.gn=3, ref.gn=2, graph.num=2)
+rexp(1, 3, 2, 5)
+rexp(1, 3, 2, 11)
+
+
+# trt: number of the Column of treatment in the dataset
+# trt.gn: number of the Column of Ct of favorit gene in the dataset
+# ref.gn: the number of the Column of Ct of housekeeping gene in the dataset
+# graph.num: can go from 1 to 11 indicating the graph type that user wants
